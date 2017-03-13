@@ -37,3 +37,11 @@ def determinant(matrix):
         for i in range(n):
             det *= matrix[i][i]
     return det
+
+
+def find_minor(mat, root):
+    mat.pop(root)
+    minor_root = list(zip(*mat))
+    minor_root.pop(root)
+    minor_root = list(zip(*minor_root))
+    return [[j for j in i] for i in minor_root]
