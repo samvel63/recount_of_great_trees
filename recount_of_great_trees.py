@@ -1,17 +1,23 @@
 import matrix
+import sys
 
-graph = [[0, 1, 0, 1],
-         [0, 0, 1, 1],
-         [0, 1, 0, 1],
-         [0, 0, 1, 0]]
+graph = [i.rstrip('\n') for i in sys.stdin.readlines()]
+graph = [i.split() for i in graph]
+graph = [[int(j) for j in i] for i in graph]
+
+#graph = [[0, 1, 0, 1],
+ #        [0, 0, 1, 1],
+ #        [0, 1, 0, 1],
+   #      [0, 0, 1, 0]]
 
 transpose_graph = list(zip(*graph))
+count_of_occurrences = [sum(i) for i in transpose_graph]
 
 for i, j in enumerate(transpose_graph):
     if sum(j) == 0:
         root_of_great_tree = i
 
-count_of_occurrences = [sum(i) for i in transpose_graph]
+
 matrix_of_occurrences = [[] for i in graph]
 
 
