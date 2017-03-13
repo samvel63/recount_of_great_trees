@@ -1,3 +1,11 @@
+def matrix_subtract(matrix1, matrix2):
+    final_matrix = []
+    for i in range(len(matrix1)):
+        final_matrix.append([matrix1[i][j] - matrix2[i][j] for j in range(len(matrix2))])
+    return final_matrix
+
+
+
 graph = [[0, 1, 0, 1],
          [0, 0, 1, 1],
          [0, 1, 0, 1],
@@ -20,7 +28,4 @@ for i in range(len(graph)):
         else:
             matrix_of_occurrences[i].append(0)
 
-transpose_graph.pop(0)
-#g = list(zip(*transpose_graph)).pop(0)
-#print(matrix_of_occurrences)
-#print(root_of_great_tree)
+print(matrix_subtract(matrix_of_occurrencesx, graph))
