@@ -1,15 +1,9 @@
-def matrix_subtract(matrix1, matrix2):
-    final_matrix = []
-    for i in range(len(matrix1)):
-        final_matrix.append([matrix1[i][j] - matrix2[i][j] for j in range(len(matrix2))])
-    return final_matrix
-
-
+import matrix
 
 graph = [[0, 1, 0, 1],
          [0, 0, 1, 1],
          [0, 1, 0, 1],
-         [0, 0, 0, 0]]
+         [0, 0, 1, 0]]
 
 transpose_graph = list(zip(*graph))
 
@@ -28,4 +22,15 @@ for i in range(len(graph)):
         else:
             matrix_of_occurrences[i].append(0)
 
-print(matrix_subtract(matrix_of_occurrencesx, graph))
+matrix_difference = matrix.subtract(matrix_of_occurrences, graph)
+
+matrix_difference.pop(root_of_great_tree)
+minor_root = list(zip(*matrix_difference))
+minor_root.pop(root_of_great_tree)
+minor_root = list(zip(*minor_root))
+minor_root = [[j for j in i] for i in minor_root]
+
+print(minor_root)
+
+
+print("Det = ", matrix.determinant(minor_root))
