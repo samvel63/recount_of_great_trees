@@ -5,6 +5,6 @@
 
 ### Definition in English: ###
 
-![Image alt](https://github.com/samvel63/recount_of_great_trees/images/img1.png)
+![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img1.png)
 
 ***
