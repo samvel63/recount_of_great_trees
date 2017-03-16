@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Directed Graph Editor</title>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<link href="app.css" rel="stylesheet">
+</head>
+<body style="background-image:url(../images/image.png)">
+<div>
+       <button id="button">
+        <font size="5">Calculate</font>
+        </button>
+
+        <button id="refresh">
+        <font size="5">Refresh</font>
+        </button>
+</div>
+<div class="square2">
+    <h2>Инструкция по использованию программы.</h2>
+    <p>Для выполнения программы нажмите "Calculate".</p>
+    <p>Для обновления страницы необходимо нажать "Refresh". После чего вершины графа будут возвращены к начальному значению.</p>
+    <p>Чтобы добавить вершину, необходимо левой кнопкой мыши, либо правой нажать на экран. Для соединения вершин графа нужно провести мышкой от 1-ой вершины до 2-ой.</p>
+    <p>Используемые клавиши клавиатуры:<br>
+<ul type="disc"> 
+    <li>'R' - направляет дугу вправо.</li>
+    <li>'L' - направляет дугу влево.</li>
+    <li>'B' - направляет дугу в обе стороны.</li>
+    <li>'Delete' - удаляет вершину или дугу.</li>
+    <li>'Ctrl' + кнопка мыши - меняет место вершины.</li>
+</ul>
+</p>
+</div> 
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
