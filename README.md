@@ -5,7 +5,7 @@ A great tree with root X0 is the graph G = (E, F) if there exists a unique verte
 
 Picture with an example of a great tree below.
 
-![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img1.png)
+![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img1.jpg)
 
 ***
 
