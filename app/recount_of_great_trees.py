@@ -1,4 +1,5 @@
 import numpy as np
+from math import sqrt
 
 def find_minor(mat, k): # delete k-th column and row
     mat.pop(k)
@@ -12,7 +13,11 @@ def matrix_subtraction(matrix1, matrix2):
     C = A - B
     return C.tolist()
 
-def recount(g, n):
+def recount(lin_matrix):
+
+    n = int(sqrt(len(lin_matrix)))
+    g = [[0 for j in range(n)] for i in range(n)] 
+    g = [lin_matrix[i:i+n] for i in range(0, len(lin_matrix), n)] #One-dimensional list in two-dimensional
 
     transpose_graph = list(zip(*g))
     count_of_occurrences = [sum(i) for i in transpose_graph]

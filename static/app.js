@@ -15,7 +15,7 @@ var svg = d3.select('body')
 //  - links are always source < target; edge directions are set by 'left' and 'right'.
 var nodes = [
     {id: 0, reflexive: false},
-    {id: 1, reflexive: true },
+    {id: 1, reflexive: false},
     {id: 2, reflexive: false}
   ],
   lastNodeId = 2,
@@ -393,12 +393,17 @@ function ConnectivityMatrix() {
     if (links[i].right === links[i].left) {
         matrix[vertex_from.id][vertex_to.id] = 1;
         matrix[vertex_to.id][vertex_from.id] = 1;
-    } else if (links[i].rigth) {
+    } else if (links[i].left) {
         matrix[vertex_to.id][vertex_from.id] = 1;
     } else {
         matrix[vertex_from.id][vertex_to.id] = 1;
+    } 
+  }
+
+  for (var i = 0; i < matrix.length; ++i) {
+    if (nodes[i].reflexive) {
+      matrix[i][i] = 1;
     }
-    
   }
 }
 
@@ -417,13 +422,31 @@ button.onclick = function() {
       lin_matr = lin_matr.concat(matrix[i]);
     }
     matrix = [];
-
-    var data=lin_matr;
-    var object={"data":data}
-    var str=JSON.stringify(object);
+    var data = lin_matr,
+        object = {"data":data},
+        str = JSON.stringify(object),
+        json;
     console.log(str);
 
     var html = $.ajax({
+        type: "POST",
+        url: "/get_len",
+        data: {'name': str},
+        type: 'POST',
+        cache: false,
+        async: false,
+        success: function(response) {
+            json = jQuery.parseJSON(response)
+            $('#len').html('Количество прадеревьев равно  ' + json.len)
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+    console.log(json.len);
+
+   /* var html = $.ajax({
         url: "/cgi-bin/cgi_script.py",
         type:"GET",
         cache:false,
@@ -432,5 +455,5 @@ button.onclick = function() {
   
     }).responseText;
     alert("Количество частичных прадеревьв равно " + html);
-    console.log(html);
+    console.log(html);*/
 };

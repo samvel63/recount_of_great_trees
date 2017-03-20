@@ -1,3 +1,7 @@
+body {
+    background-image: url(images/image.png);
+}
+
 svg {
   background-color: #FFF;
   cursor: default;
@@ -86,6 +90,15 @@ button:active {
   color:#000000; 
   width: 400px; 
   height: 500px; 
-  position:absolute; 
-  right:100px
+  position: absolute; 
+  right: 100px
+}
+
+.square {
+  position: absolute;
+  bottom: 150px;
+  position: absolute;
+  right: 400;
+  z-index: 999999;
+  background: #FFF;
 }
