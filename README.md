@@ -22,10 +22,9 @@
 ### Инструкция по запуску ###
 
 1. Сначала необходимо установить фласк и его виртуальное окружение:
- 1.1. mkdir name_your_folder(назвать можно как захотите)
- 1.2. virtualenv --system-site-packages --python=/usr/bin/python3 env
- 1.3. source env/bin/activate
- 1.4. pip install flask
-2. Далее файлы с репозитория нужно поместить в папку name_your_folder.
+
+![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img2.jpg)
+
+2. Далее файлы с репозитория нужно поместить в папку flask_simple_ajax(название может быть любым).
 3. Открыть и запустить файл.
 4. В любом браузере заходим по ссылке localhost:5000 и пользуемся программой.
