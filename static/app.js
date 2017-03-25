@@ -445,4 +445,5 @@ button.onclick = function() {
         }
     });
     console.log(json.len);
+    console.log(json.graphs);
 };

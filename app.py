@@ -1,5 +1,6 @@
 from flask import Flask, render_template, json, request
 from app.recount_of_great_trees import *
+from app.search_great_trees import *
 
 app = Flask(__name__)
 
@@ -15,8 +16,10 @@ def get_len():
     res = json.loads(name)
     lin_matrix = res["data"]
     graph = to_two_dimensional(lin_matrix)
-    d = recount(graph)
-    return json.dumps({'len': d})
+    root = find_root(graph)
+    d = recount(graph, root)
+    lst = search_great_trees(len(graph), root, graph, d)
+    return json.dumps({'len': d, 'graphs': lst})
 
 
 if __name__ == '__main__':
