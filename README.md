@@ -1,41 +1,20 @@
-# Подсчет количества прадеревьев в графе и построение графа #
+# Recount of a great trees #
 
-### Определение прадерева ###
-**Прадеревом с корнем A** называется граф G = (E, Г), если существует единственная вершина А, в которую не заходит ни одна дуга; в каждую другую вершину заходит в точности одна дуга; граф не имеет контуров.
+### Definition of great tree: ###
+A great tree with root X0 is the graph G = (E, F) if there exists a unique vertex A, into which no arcs come; In each other vertex exactly one arc comes in; The graph has no contours.
 
-На картинке пример с прадеревом:
+Picture with an example of a great tree below.
 
-![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img1.jpg)
-
-***
-
-### Алгоритм вычисления ###
-
-1. Найти матрицу связности.
-2. Найти матрицу вхождений.
-3. Посчитать разность матрицы вхождений и матрицы связности.
-4. У полученной матрицы удалить k-ую строку и столбец, k - это корень прадерева.
-5. Посчитать детериминант у обработанной матрицы.
-Полученное число будет количеством частичных прадеревьев на графе.
+![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img1.png)
 
 ***
-### Инструкция по запуску ###
 
-1. Сначала необходимо установить фласк и его виртуальное окружение:
+### Tasks algorithm ###
 
-![Image alt](https://github.com/samvel63/recount_of_great_trees/raw/master/images/img2.jpg)
-
-2. Далее файлы с репозитория нужно поместить в папку flask_simple_ajax(название может быть любым).
-3. Открыть и запустить файл.
-4. В любом браузере заходим по ссылке localhost:5000 и пользуемся программой.
+1. Find connectivity matrix.
+2. Find the occurrence matrix.
+3. Calculate difference of occurrence matrix and сonnection matrix.
+4. Remove k-th column and row in matrix(k - position of the root of great tree).
+5. Сalculate determinant of resulting matrix.
 
 ***
-### Инструкция по использованию программы ###
-
-<li>Чтобы соединить графы проведите зажатой левой кнопкой мышь от первой вершины до второй.
-<li>Чтобы сделать цикл, необходимо выделить вершину левой кнопкой мышь и нажать 'R' - вершина будет выделена черной линией.
-<li>Чтобы удалить вершину или дугу, выделите её и нажмите 'Delete'.
-<li>Если выделить дугу, то при нажатии кнопки 'R' дуга будет направлена вправо.
-<li>Если выделить дугу, то при нажатии кнопки 'L' дуга будет направлена влево.
-<li>Если выделить дугу, то при нажатии кнопки 'B' дуга будет направлена в обе стороны.
-<li>Если зажать ctrl + левая кнопка мыши, то можно сменить место вершины.

@@ -13,8 +13,9 @@ def index():
 def get_len():
     name = request.form['name']
     res = json.loads(name)
-    matrix_lin = res["data"]
-    d = recount(matrix_lin)
+    lin_matrix = res["data"]
+    graph = to_two_dimensional(lin_matrix)
+    d = recount(graph)
     return json.dumps({'len': d})
 
 

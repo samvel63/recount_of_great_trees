@@ -1,6 +1,12 @@
 import numpy as np
 from math import sqrt
 
+def to_two_dimensional(lin_matrix): #One-dimensional list in two-dimensional
+    n = int(sqrt(len(lin_matrix)))
+    normal_matrix = [[0 for j in range(n)] for i in range(n)] 
+    normal_matrix = [lin_matrix[i:i+n] for i in range(0, len(lin_matrix), n)]
+    return normal_matrix
+
 def find_minor(mat, k): # delete k-th column and row
     mat.pop(k)
     minor_root = list(zip(*mat))
@@ -13,12 +19,8 @@ def matrix_subtraction(matrix1, matrix2):
     C = A - B
     return C.tolist()
 
-def recount(lin_matrix):
-
-    n = int(sqrt(len(lin_matrix)))
-    g = [[0 for j in range(n)] for i in range(n)] 
-    g = [lin_matrix[i:i+n] for i in range(0, len(lin_matrix), n)] #One-dimensional list in two-dimensional
-
+def recount(g):
+    n = len(g)
     transpose_graph = list(zip(*g))
     count_of_occurrences = [sum(i) for i in transpose_graph]
 
@@ -32,5 +34,3 @@ def recount(lin_matrix):
     minor_root = find_minor(matrix_difference, root_of_great_tree[0])
 
     return int(np.linalg.det(minor_root))
-
-#print("Number Of Great Trees = ", int(matrix.determinant(minor_root)))

@@ -445,15 +445,4 @@ button.onclick = function() {
         }
     });
     console.log(json.len);
-
-   /* var html = $.ajax({
-        url: "/cgi-bin/cgi_script.py",
-        type:"GET",
-        cache:false,
-        async: false,
-        data: {'test': str }
-  
-    }).responseText;
-    alert("Количество частичных прадеревьв равно " + html);
-    console.log(html);*/
 };
